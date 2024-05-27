@@ -1,4 +1,4 @@
-# Scatterplot Graph
+# Choropleth Map
 
 This project is a part of the Free Code Camp curriculum. It visualizes US educational attainment data using a choropleth map created with D3.js and styled with Tailwind CSS.
 
