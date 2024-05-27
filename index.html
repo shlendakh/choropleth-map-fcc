@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choropleth Map</title>
+  <link href="output.css" rel="stylesheet">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+  <div class="container mx-auto p-4">
+    <h1 id="title" class="text-3xl font-bold text-center mb-4">United States Educational Attainment</h1>
+    <h2 id="description" class="text-xl text-center mb-8">Percentage of adults age 25 and older with a bachelor's degree or higher (2010-2014)</h2>
+    <div class="relative">
+      <svg id="chart" class="block mx-auto"></svg>
+      <div id="tooltip" class="absolute bg-white p-2 rounded shadow opacity-0 pointer-events-none"></div>
+    </div>
+    <div id="legend" class="mt-4 p-2 bg-white rounded shadow text-center flex justify-center space-x-2">
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
