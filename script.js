@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       const color = d3.scaleQuantize()
         .domain([d3.min(educationData, d => d.bachelorsOrHigher), d3.max(educationData, d => d.bachelorsOrHigher)])
-        .range(d3.schemeBlues[9]); // Ensure at least 4 different colors
+        .range(d3.schemeBlues[9]);
   
       svg.append("g")
         .selectAll("path")
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
           tooltip.transition().duration(200).style("opacity", 1);
           tooltip.html(`FIPS: ${d.id}<br>Education: ${education[d.id]}%`)
             .attr("data-education", education[d.id])
-            .style("left", (event.pageX  - 150) + "px")
-            .style("top", (event.pageY - 300) + "px");
+            .style("left", (event.pageX - 160) + "px")
+            .style("top", (event.pageY - 250) + "px");
         })
         .on("mouseout", function() {
           d3.select("#tooltip").transition().duration(500).style("opacity", 0);
@@ -45,7 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
       svg.append("path")
         .datum(topojson.mesh(countyData, countyData.objects.states, (a, b) => a !== b))
         .attr("class", "states")
-        .attr("d", path);
+        .attr("d", path)
+        .attr("fill", "none")
+        .attr("stroke", "#fff")
+        .attr("stroke-linejoin", "round");
   
       const legend = d3.select("#legend");
   
@@ -77,4 +80,4 @@ document.addEventListener('DOMContentLoaded', function() {
           .range([0, legendWidth]))
           .tickValues(legendColors.map(d => d.value.toFixed(2))));
     });
-  });  
+  });
